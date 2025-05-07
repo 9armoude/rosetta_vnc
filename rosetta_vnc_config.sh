@@ -7,7 +7,7 @@ docker run -d \
   --shm-size=256m \
   -p 5901:5901 \
   -p 6901:6901 \
-  -v headless:/headless \
+  -v ./headless:/headless \
   vinexborsalino/rosetta_vnc
 
 # Wait a few seconds to ensure the container is fully started
