@@ -11,4 +11,3 @@ services:
       - "6901:6901"
     volumes:
       - ./headless:/headless
-    restart: unless-stopped
