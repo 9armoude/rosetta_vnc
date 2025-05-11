@@ -1,5 +1,3 @@
-version: '3.3'
-
 services:
   rosetta:
     container_name: rosetta_container
