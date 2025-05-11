@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  rosetta:
+    container_name: rosetta_container
+    image: vinexborsalino/rosetta_vnc
+    user: "0"
+    shm_size: 256m
+    ports:
+      - "5901:5901"
+      - "6901:6901"
+    volumes:
+      - ./headless:/headless
+    restart: unless-stopped
+    detach: true
