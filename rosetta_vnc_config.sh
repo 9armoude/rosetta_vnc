@@ -10,8 +10,12 @@ fi
 echo "Downloading new docker-compose.yaml..."
 wget https://raw.githubusercontent.com/9armoude/rosetta_vnc/test/docker-compose.yaml
 
-# Remove unsupported version line
+# Remove 'version:' line
 sed -i '/^version:/d' docker-compose.yaml
+
+# Also remove leading 2 spaces from 'services:' line if it exists
+sed -i '/^services:/d' docker-compose.yaml
+sed -i 's/^  //' docker-compose.yaml
 
 # Start the container
 docker-compose up -d
